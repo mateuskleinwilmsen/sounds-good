@@ -1,0 +1,76 @@
+.conta-abas{
+    margin: 40px 0px;
+    margin-right: 0px;
+}
+
+@media (max-width:800px) {
+    .conta-abas{
+        display: none;
+    }
+}
+
+.perfil{
+    margin-top: 40px;
+}
+
+.perfil-imagem{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+
+.perfil-imagem img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.perfil-nick{
+    width: 100px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.perfil-nick input{
+    width: 100px;
+    background-color: transparent;
+    color: var(--cor-c11);
+    border: none;
+    text-align: center;
+    outline: none;
+}
+
+.perfil-nick input:focus{
+    text-decoration: underline;
+}
+
+/* abas */
+
+.abas{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.aba{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%
+}
+
+.aba.sel{
+    background: var(--cor-c1);
+}
+
+.aba > span{
+    color: var(--cor-c1);
+    font-size: 1.8rem;
+}
+
+.aba.sel > span{
+    color: var(--cor-c10);
+}

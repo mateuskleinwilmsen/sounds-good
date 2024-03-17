@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sounds good</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <main class="app">
+
+        <div class="conteudo">
+            <section class="conta-abas">
+                <div class="perfil">
+                    <div class="perfil-imagem">
+                        <img src="img/Sem título.png">
+                    </div>
+                    <div class="perfil-nick">
+                        <input type="text" value="nomezinho" class="fm" minlength="0" maxlength="9" spellcheck="false">
+                    </div>
+                </div>
+                <div class="abas">
+                    <button class="aba aba-home sel">
+                        <span class="material-symbols-outlined c11">home</span>
+                    </button>
+                    <button class="aba aba-fav">
+                        <span class="material-symbols-outlined c11">favorite</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="musicas">
+                <!-- <div class="musica">
+                    <div class="musica-img">
+                        <img src="img/re4.jpg" height="100" width="100">
+                    </div>
+                    <div class="musica-dados pausado">
+                        <span class="c11 fm">Serenity</span>
+                        <span class="c9 fp">Biohazard...</span>
+                    </div>
+                </div> -->
+            </section>
+        </div>
+        
+        <section class="controles-bg">
+            <div class="controles container">
+                <div class="controles-musica">
+                    <div class="controles-musica-img">
+                        <img src="img/re4.jpg" height="100" width="100">
+                    </div>
+                    <div class="controles-musica-dados">
+                        <span class="controles-musica-nome c11 fm">Serenity</span>
+                        <span class="controles-musica-cantor c9 fp">Biohazard - RE4</span>
+                    </div>
+                </div>
+
+                <div class="audio">
+                    <audio src="audio/Serenity.mp3" id="audio"></audio>
+                    <div class="audio-info">
+                        <span id="timer-agora" class="fp c9">0:00</span>
+                        <div class="barra-tempo">
+                            <input type="range" id="slider-tempo" min="0" max="1000" value="0">
+                        </div>
+                        <span id="timer-duracao" class="fp c9">2:00</span>
+                    </div>
+                    <div class="audio-controles">
+                        <span class="material-symbols-outlined c11" id="play-audio">play_circle</span>
+                    </div>
+                </div>
+
+                <div class="controle-volume">
+                    <span class="material-symbols-outlined c11">volume_up</span>
+                    <div class="barra-volume">
+                        <input type="range" id="slider-volume" min="0" max="1000" value="500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

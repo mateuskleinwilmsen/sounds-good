@@ -1,0 +1,79 @@
+.musicas{
+    height: calc(100% - 80px - 56px);
+    margin: 40px 40px 40px 0px;
+    background-color: var(--cor-c1);
+    border-radius: 8px;
+    box-sizing: content-box;
+    display: grid;
+    justify-content: space-around;
+    gap: 12px 0px;
+    padding: 28px;
+    grid-template-columns: repeat(3,max-content);
+    grid-template-rows: 100px;
+}
+
+@media (max-width:1100px) {
+    .musicas{
+        grid-template-columns: repeat(2, max-content);
+    }
+}
+
+@media (max-width:800px) {
+    .musicas{
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        grid-template-columns: max-content;
+    }
+}
+
+.musica{
+    padding: 8px;
+    cursor: pointer;
+    width: 216px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    height: fit-content;
+}
+
+.musica-img{
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
+.musica-img > img{
+    z-index: 1;
+    position: relative;
+}
+
+.musica-dados{
+    z-index: 1;
+    height: 75px;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* encostar na musica */
+.musica:hover{
+    background-color: var(--cor-c2);
+    border-radius: 4px;
+}
+
+.musica-img span{
+    display: none;
+}
+
+/* musica esta tocando */
+.musica.escolhida{
+    border-radius: 4px;
+    /* border: 2px solid var(--cor-p2); */
+    background-color: var(--cor-p4);
+}
+
+.musica.escolhida .musica-dados span:nth-child(1){
+    color: var(--cor-p1);
+}

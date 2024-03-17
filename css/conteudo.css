@@ -1,0 +1,11 @@
+.conteudo{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: calc(100vh - 100px);
+}
+
+@media (max-width:800px) {
+    .conteudo{
+        grid-template-columns: 1fr;
+    }
+}

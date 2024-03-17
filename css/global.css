@@ -1,0 +1,9 @@
+*{
+    user-select: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: var(--cor-c0);
+}
