@@ -6,6 +6,7 @@
 
 @media (max-width:800px) {
     .conteudo{
+        height: calc(100vsh - 100px);
         grid-template-columns: 1fr;
     }
 }
