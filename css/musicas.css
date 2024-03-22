@@ -23,7 +23,11 @@
         margin: 0px;
         padding: 12px 0px 0px 0px;
         width: 100%;
-        grid-template-columns: 80%;
+        height: 100%;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
     }
 }
 
@@ -80,6 +84,6 @@
 
 @media (max-width:800px) {
     .musica{
-        width: 100%;
+        width: calc(100% - 16px);
     }
 }
