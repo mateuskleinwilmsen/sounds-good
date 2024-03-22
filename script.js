@@ -14,7 +14,8 @@ let musicaEscolhida = 0;
 let musicaEstado = "escolhida";
 let musicas = [ ["audio/sad-soul-chasing-a-feeling.mp3","img/AlexGrohl.webp","Sad Soul","AlexGrohl"],
                 ["audio/titanium.mp3","img/AlisiaBeats.webp","Titanium","AlisiaBeats"],
-            ["audio/a-long-way.mp3","img/Serge Pavkin Music.jpg","A Long Way","Serge Pavi..."]];
+            ["audio/a-long-way.mp3","img/Serge Pavkin Music.jpg","A Long Way","Serge Pavi..."],
+            ["audio/glossy.mp3", "img/comamedia.webp", "Glossy", "coma-media"]];
 let mudandoTempo = 0;
 let volume = 0.1;
 audio.volume = volume;
