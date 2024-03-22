@@ -21,9 +21,9 @@
 @media (max-width:800px) {
     .musicas{
         margin: 0px;
-        padding: 0px;
+        padding: 12px 0px 0px 0px;
         width: 100%;
-        grid-template-columns: max-content;
+        grid-template-columns: 80%;
     }
 }
 
@@ -76,4 +76,10 @@
 
 .musica.escolhida .musica-dados span:nth-child(1){
     color: var(--cor-p1);
+}
+
+@media (max-width:800px) {
+    .musica{
+        width: 100%;
+    }
 }
