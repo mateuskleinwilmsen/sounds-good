@@ -14,6 +14,7 @@
 
 @media (max-width:800px) {
     .musicas{
+        background-color: var(--cor-c0);
         margin: 74px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         gap: 0px;
@@ -80,6 +81,21 @@
 }
 
 @media (max-width:800px) {
+    .musica-img{
+        position: relative;
+        width: 64px;
+        height: 64px;
+    }
+
+    .musica-dados{
+        height: 64px;
+    }
+
+    .musica-img > img{
+        width: 100%;
+        height: 100%;
+    }
+
     .musica{
         margin: 6px 0px;
         padding: 12px 8px;
