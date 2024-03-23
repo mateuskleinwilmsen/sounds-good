@@ -27,6 +27,18 @@
     }
 }
 
+@media (max-width: 900px) {
+    .controles{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .controles{
+        gap: 0px;
+    }
+}
+
 /* nome da musica e cantor */
 
 .controles-musica{
@@ -140,6 +152,17 @@
     height: 8px;
     width: 10px;
 }
+
+@media (max-width:800px) {
+    .barra-tempo{
+        min-width: auto;
+    }
+
+    #slider-tempo{
+        min-width: auto;
+    }
+}
+
 
 /* volume */
 
