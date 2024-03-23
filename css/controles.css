@@ -154,6 +154,14 @@
 }
 
 @media (max-width:800px) {
+    #slider-tempo::-webkit-slider-thumb{
+        width: 4px;
+    }
+
+    .barra-tempo:hover #slider-tempo::-webkit-slider-thumb{
+        background-color: var(--cor-c11);
+    }
+
     .barra-tempo{
         min-width: auto;
     }
