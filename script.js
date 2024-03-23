@@ -122,7 +122,14 @@ sliderTempo.addEventListener("input", () => {
 })
 
 //função que diz que o usuario nao esta mais modificando o tempo do audio
+//pc
 sliderTempo.addEventListener("mouseup", () => {
+    mudandoTempo = 0;
+    audio.currentTime = (audio.duration / 1000) * sliderTempo.value;
+});
+
+//celular
+sliderTempo.addEventListener("touchend", () => {
     mudandoTempo = 0;
     audio.currentTime = (audio.duration / 1000) * sliderTempo.value;
 });
