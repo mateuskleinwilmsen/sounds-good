@@ -31,21 +31,33 @@ fotoMusica.src = musicas[musicaEscolhida][1];
 nomeMusica.textContent = musicas[musicaEscolhida][2];
 nomeCantor.textContent = musicas[musicaEscolhida][3];
 
-//tempo da musica
-//quando carregar a musica
-audio.onloadedmetadata = function() {
-    audio.currentTime=0;
+//funcao usada para atualizar os dados do tempo
+function attInfoTempo(event, timerAgora = audio.currentTime,timerDuracao = audio.duration){
 
-    timerAgora = audio.currentTime;
-    timerDuracao = audio.duration;
+    //caso o audio ainda não carregou, irá dar o valor de 0 para o tempo dele
+    if(String(timerDuracao)=="NaN"){timerDuracao=1;timerAgora=0;}
+
     const minutosAgora = Math.floor(timerAgora / 60);
     const segundosAgora = Math.floor(timerAgora % 60);
     const minutosDuracao = Math.floor(timerDuracao / 60);
     const segundosDuracao = Math.floor(timerDuracao % 60);
-    
+
     timerDuracaoDisplay.textContent = `${minutosDuracao}:${segundosDuracao < 10 ? "0" : ""}${segundosDuracao}`;
-    timerAgoraDisplay.textContent = `${minutosAgora}:${segundosAgora < 10 ? "0" : ""}${segundosAgora}`;
-    sliderTempo.value = (audio.currentTime / audio.duration) * 1000;
+    
+    //vendo se o usuario esta mudificando ou nao o tempo do audio
+    if(mudandoTempo==0){
+        timerAgoraDisplay.textContent = `${minutosAgora}:${segundosAgora < 10 ? "0" : ""}${segundosAgora}`;
+        sliderTempo.value = (timerAgora / timerDuracao) * 1000;
+    }
+
+    //mudando o background do tempo que ja passou da musica
+    sliderTempo.style.boxShadow = `inset ${(sliderTempo.offsetWidth/1000)*sliderTempo.value}px 0px 0px var(--cor-c11)`;
+}
+
+//tempo da musica
+//quando carregar a musica
+audio.onloadedmetadata = function() {
+    audio.currentTime=0;
 }
 
 //atualizando os dados
@@ -59,28 +71,6 @@ for(let c = 0; c < musicas.length ;c++){
         <span class="c9 fp2">${musicas[c][3]}</span>
     </div>
     </div>`;
-}
-
-function attInfoTempo(event, timerAgora = audio.currentTime,timerDuracao = audio.duration){
-
-    //caso o audio ainda não carregou, ira retornar o valor de 0 para a duração dele
-    if(String(timerDuracao)=="NaN"){timerDuracao=0;}
-
-    const minutosAgora = Math.floor(timerAgora / 60);
-    const segundosAgora = Math.floor(timerAgora % 60);
-    const minutosDuracao = Math.floor(timerDuracao / 60);
-    const segundosDuracao = Math.floor(timerDuracao % 60);
-
-    timerDuracaoDisplay.textContent = `${minutosDuracao}:${segundosDuracao < 10 ? "0" : ""}${segundosDuracao}`;
-    
-    //vendo se o usuario esta mudificando ou nao o tempo do audio
-    if(mudandoTempo==0){
-        timerAgoraDisplay.textContent = `${minutosAgora}:${segundosAgora < 10 ? "0" : ""}${segundosAgora}`;
-        sliderTempo.value = (audio.currentTime / audio.duration) * 1000;
-    }
-
-    //mudando o background do tempo que ja passou da musica
-    sliderTempo.style.boxShadow = `inset ${(sliderTempo.offsetWidth/1000)*sliderTempo.value}px 0px 0px var(--cor-c11)`;
 }
 
 //configurando o volume
