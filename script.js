@@ -61,7 +61,10 @@ for(let c = 0; c < musicas.length ;c++){
     </div>`;
 }
 
-function attInfoTempo(timerAgora = audio.currentTime,timerDuracao = audio.duration){
+function attInfoTempo(event, timerAgora = audio.currentTime,timerDuracao = audio.duration){
+
+    //caso o audio ainda não carregou, ira retornar o valor de 0 para a duração dele
+    if(String(timerDuracao)=="NaN"){timerDuracao=0;}
 
     const minutosAgora = Math.floor(timerAgora / 60);
     const segundosAgora = Math.floor(timerAgora % 60);
