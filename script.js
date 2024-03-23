@@ -15,7 +15,8 @@ let musicaEstado = "escolhida";
 let musicas = [ ["audio/sad-soul-chasing-a-feeling.mp3","img/AlexGrohl.webp","Sad Soul","AlexGrohl"],
                 ["audio/titanium.mp3","img/AlisiaBeats.webp","Titanium","AlisiaBeats"],
             ["audio/a-long-way.mp3","img/Serge Pavkin Music.jpg","A Long Way","Serge Pavi..."],
-            ["audio/glossy.mp3", "img/comamedia.webp", "Glossy", "coma-media"]];
+            ["audio/glossy.mp3", "img/comamedia.webp", "Glossy", "coma-media"],
+            ["audio/good-night.mp3","img/fasssounds.webp","Good Night","Fass Sounds"]];
 let mudandoTempo = 0;
 let volume = 0.1;
 audio.volume = volume;
@@ -60,6 +61,25 @@ for(let c = 0; c < musicas.length ;c++){
     </div>`;
 }
 
+function attInfoTempo(timerAgora = audio.currentTime,timerDuracao = audio.duration){
+
+    const minutosAgora = Math.floor(timerAgora / 60);
+    const segundosAgora = Math.floor(timerAgora % 60);
+    const minutosDuracao = Math.floor(timerDuracao / 60);
+    const segundosDuracao = Math.floor(timerDuracao % 60);
+
+    timerDuracaoDisplay.textContent = `${minutosDuracao}:${segundosDuracao < 10 ? "0" : ""}${segundosDuracao}`;
+    
+    //vendo se o usuario esta mudificando ou nao o tempo do audio
+    if(mudandoTempo==0){
+        timerAgoraDisplay.textContent = `${minutosAgora}:${segundosAgora < 10 ? "0" : ""}${segundosAgora}`;
+        sliderTempo.value = (audio.currentTime / audio.duration) * 1000;
+    }
+
+    //mudando o background do tempo que ja passou da musica
+    sliderTempo.style.boxShadow = `inset ${(sliderTempo.offsetWidth/1000)*sliderTempo.value}px 0px 0px var(--cor-c11)`;
+}
+
 //configurando o volume
 sliderVolume.value = volume*1000;
 sliderVolume.style.boxShadow = `inset ${sliderVolume.offsetWidth*volume}px 0px 0px var(--cor-c11)`;
@@ -89,21 +109,7 @@ audio.addEventListener("timeupdate", () => {
         audio.play();
     }
 
-    const minutosAgora = Math.floor(timerAgora / 60);
-    const segundosAgora = Math.floor(timerAgora % 60);
-    const minutosDuracao = Math.floor(timerDuracao / 60);
-    const segundosDuracao = Math.floor(timerDuracao % 60);
-
-    timerDuracaoDisplay.textContent = `${minutosDuracao}:${segundosDuracao < 10 ? "0" : ""}${segundosDuracao}`;
-    
-    //vendo se o usuario esta mudificando ou nao o tempo do audio
-    if(mudandoTempo==0){
-        timerAgoraDisplay.textContent = `${minutosAgora}:${segundosAgora < 10 ? "0" : ""}${segundosAgora}`;
-        sliderTempo.value = (audio.currentTime / audio.duration) * 1000;
-    }
-
-    //mudando o background do tempo que ja passou da musica
-    sliderTempo.style.boxShadow = `inset ${(sliderTempo.offsetWidth/1000)*sliderTempo.value}px 0px 0px var(--cor-c11)`;
+    attInfoTempo();
 })
 
 //funcao para  dizer que o usuario esta modificando o tempo do audio
@@ -168,14 +174,8 @@ function mudarMusica(m=0){
         </div>`;
     }
 
-    timerAgora = audio.currentTime;
-    timerDuracao = audio.duration;
-    const minutosAgora = Math.floor(timerAgora / 60);
-    const segundosAgora = Math.floor(timerAgora % 60);
-    const minutosDuracao = Math.floor(timerDuracao / 60);
-    const segundosDuracao = Math.floor(timerDuracao % 60);
-    
-    timerDuracaoDisplay.textContent = `${minutosDuracao}:${segundosDuracao < 10 ? "0" : ""}${segundosDuracao}`;
-    timerAgoraDisplay.textContent = `${minutosAgora}:${segundosAgora < 10 ? "0" : ""}${segundosAgora}`;
-    sliderTempo.value = (audio.currentTime / audio.duration) * 1000;
+    attInfoTempo()
 }
+
+//evento que chama a função quando a tela muda de tamanho
+window.addEventListener("resize", attInfoTempo);
