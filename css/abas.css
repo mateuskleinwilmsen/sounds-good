@@ -68,10 +68,11 @@
         background: linear-gradient(0deg, var(--cor-c1), var(--cor-c0));
         width: calc(100% - 24px);
         margin: 0px;
-        padding: 12px 12px 8px 12px;
+        padding: 12px 12px 12px 12px;
         top: 0px;
         left: 0px;
         position: absolute;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
     }
 }
 

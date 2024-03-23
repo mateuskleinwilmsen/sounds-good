@@ -14,11 +14,11 @@
 
 @media (max-width:800px) {
     .musicas{
-        margin: 70px 0px 0px 0px;
+        margin: 74px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         gap: 0px;
         width: 100%;
-        height: calc(100% - 70px);
+        height: calc(100dvh - 70px - 100px);
         border-radius: 0px;
         display: flex;
         flex-direction: column;
