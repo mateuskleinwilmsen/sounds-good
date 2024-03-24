@@ -150,7 +150,7 @@
         position: relative;
         height: 0px;
         left: -20px;
-        top: -80px;
+        top: -84px;
         width: 100dvw;
     }
     .controles-musica-img{
@@ -175,8 +175,8 @@
 
     .controles-musica-dados{
         padding-left: 20px;
-        padding-top: 6px;
-        padding-bottom: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         background-color: var(--cor-c1);
     }
 
