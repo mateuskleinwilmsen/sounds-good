@@ -27,18 +27,6 @@
     }
 }
 
-@media (max-width: 900px) {
-    .controles{
-        gap: 20px;
-    }
-}
-
-@media (max-width: 500px) {
-    .controles{
-        gap: 0px;
-    }
-}
-
 /* nome da musica e cantor */
 
 .controles-musica{
@@ -55,6 +43,7 @@
 }
 
 .controles-musica-cantor{
+    text-decoration: none;
     cursor: pointer;
     margin-top: 4px;
 }
@@ -75,15 +64,6 @@
     position: absolute;
     top: -36px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width:800px) {
-    .controles-musica{
-        grid-template-columns: 100px;
-    }
-    .controles-musica-img{
-        display: none;
-    }
 }
 
 /* audio */
@@ -154,6 +134,23 @@
 }
 
 @media (max-width:800px) {
+    .controles{
+        height: 82px;
+        grid-template-columns: 0px auto;
+    }
+
+    .controles-musica{
+        grid-template-columns: auto;
+        position: relative;
+        height: 0px;
+        left: -20px;
+        top: -80px;
+        width: 100dvw;
+    }
+    .controles-musica-img{
+        display: none;
+    }
+
     #slider-tempo::-webkit-slider-thumb{
         width: 4px;
     }
@@ -168,6 +165,23 @@
 
     #slider-tempo{
         min-width: auto;
+    }
+
+    .controles-musica-dados{
+        padding-left: 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background-color: var(--cor-c1);
+    }
+
+    .audio-info{
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .controles{
+        gap: 0px;
     }
 }
 

@@ -12,11 +12,17 @@ const fotoMusica = document.querySelector(".controles-musica-img > img");
 let tocando = 0;
 let musicaEscolhida = 0;
 let musicaEstado = "escolhida";
-let musicas = [ ["audio/sad-soul-chasing-a-feeling.mp3","img/AlexGrohl.webp","Sad Soul","AlexGrohl"],
-                ["audio/titanium.mp3","img/AlisiaBeats.webp","Titanium","AlisiaBeats"],
-            ["audio/a-long-way.mp3","img/Serge Pavkin Music.jpg","A Long Way","Serge Pavi..."],
-            ["audio/glossy.mp3", "img/comamedia.webp", "Glossy", "coma-media"],
-            ["audio/good-night.mp3","img/fasssounds.webp","Good Night","Fass Sounds"]];
+let musicas = [ ["audio/sad-soul-chasing-a-feeling.mp3","img/AlexGrohl.webp","Sad Soul","AlexGrohl","https://pixabay.com/pt/music/batidas-sad-soul-chasing-a-feeling-185750/"],
+
+            ["audio/titanium.mp3","img/AlisiaBeats.webp","Titanium","AlisiaBeats","https://pixabay.com/pt/music/futuro-baixo-titanium-170190/"],
+
+            ["audio/a-long-way.mp3","img/Serge Pavkin Music.jpg","A Long Way","Serge Pavi...","https://pixabay.com/pt/music/construir-cenas-a-long-way-166385/"],
+
+            ["audio/glossy.mp3", "img/comamedia.webp", "Glossy", "coma-media","https://pixabay.com/pt/music/batidas-glossy-168156/"],
+
+            ["audio/good-night.mp3","img/fasssounds.webp","Good Night","Fass Sounds","https://pixabay.com/pt/music/batidas-good-night-160166/"],
+
+            ["audio/tvari-tokyo-cafe.mp3","img/tvari.jpg","Tokyo Cafe","TVARI","https://pixabay.com/pt/music/batidas-tvari-tokyo-cafe-159065/"]];
 let mudandoTempo = 0;
 let volume = 0.1;
 audio.volume = volume;
@@ -30,6 +36,7 @@ audio.src = musicas[musicaEscolhida][0];
 fotoMusica.src = musicas[musicaEscolhida][1];
 nomeMusica.textContent = musicas[musicaEscolhida][2];
 nomeCantor.textContent = musicas[musicaEscolhida][3];
+nomeCantor.href = musicas[musicaEscolhida][4];
 
 //funcao usada para atualizar os dados do tempo
 function attInfoTempo(event, timerAgora = audio.currentTime,timerDuracao = audio.duration){
@@ -153,6 +160,7 @@ function mudarMusica(m=0){
     fotoMusica.src = musicas[musicaEscolhida][1];
     nomeMusica.textContent = musicas[musicaEscolhida][2];
     nomeCantor.textContent = musicas[musicaEscolhida][3];
+    nomeCantor.href = musicas[musicaEscolhida][4];
 
     audio.currentTime=0;
     audio.play();

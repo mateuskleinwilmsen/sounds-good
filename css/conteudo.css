@@ -7,5 +7,6 @@
 @media (max-width:800px) {
     .conteudo{
         grid-template-columns: 1fr;
+        grid-template-rows: 57px auto;
     }
 }

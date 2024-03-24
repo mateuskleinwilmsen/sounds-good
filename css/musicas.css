@@ -10,21 +10,21 @@
     padding: 28px;
     grid-template-columns: repeat(auto-fit,244px);
     grid-template-rows: 100px;
+    overflow-y: auto;
 }
 
 @media (max-width:800px) {
     .musicas{
         background-color: var(--cor-c0);
-        margin: 74px 0px 0px 0px;
+        margin: 0px;
         padding: 0px 0px 0px 0px;
         gap: 0px;
         width: 100%;
-        height: calc(100dvh - 70px - 100px);
+        height: calc(100dvh - 57px - 82px - 62px);
         border-radius: 0px;
         display: flex;
         flex-direction: column;
         justify-content: start;
-        overflow-y: auto;
     }
 }
 
