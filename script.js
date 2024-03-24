@@ -116,6 +116,10 @@ audio.addEventListener("timeupdate", () => {
 sliderTempo.addEventListener("mousedown", () => {
     mudandoTempo = 1;
 });
+//celular
+sliderTempo.addEventListener("touchstart", () => {
+    mudandoTempo = 1;
+});
 
 //funcao que mostra o tempo que o usuario esta modificando ao vivo
 sliderTempo.addEventListener("input", () => {
