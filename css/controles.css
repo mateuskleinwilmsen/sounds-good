@@ -85,6 +85,12 @@
     justify-content: center;
 }
 
+#timer-agora{
+    max-width: 30px;
+    min-width: 30px;
+    text-align: right;
+}
+
 .audio-controles > span{
     cursor: pointer;
     font-size: 2.5rem;
